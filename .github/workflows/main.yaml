@@ -22,23 +22,23 @@ jobs:
 
 
 # #First Job is for PHP Programming Language..
-#   php:
-#     name: PHP
-#     runs-on: ubuntu-latest
+  php:
+    name: PHP
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: checkout
-#         uses: actions/checkout@v3
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
 
-#       - name: Run a one-line script
-#         uses: shivammathur/setup-php@v2
-#         with:
-#           php-version: "8.1"
+      - name: Run a one-line script
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
       
-#       - run: |
-#           pwd
-#           ls
-#           php HelloWorld.php
+      - run: |
+          pwd
+          ls
+          php HelloWorld.php
 
 
 # #Third Job is for Python Programming Language..
