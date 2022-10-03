@@ -1,0 +1,162 @@
+name: Azure-Devops
+on: 
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  
+  workflow_dispatch:     
+
+jobs:
+
+
+#Second Job is for JavaScript Programming Language..
+  js:
+    name: Javascript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+      - run: |
+          node HelloWorld.js
+
+
+# #First Job is for PHP Programming Language..
+#   php:
+#     name: PHP
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v3
+
+#       - name: Run a one-line script
+#         uses: shivammathur/setup-php@v2
+#         with:
+#           php-version: "8.1"
+      
+#       - run: |
+#           pwd
+#           ls
+#           php HelloWorld.php
+
+
+# #Third Job is for Python Programming Language..
+#   python:
+#     name: Python
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-python@v4
+#         with:
+#           python-version: "3.10" # Version range or exact version of a Python version to use, using SemVer's version range syntax
+#           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
+#       - run: python HelloWorld.py
+
+# #Forth Job is for C++ Programming Language..
+#   cpp:
+#     name: C++
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       # - uses: nicledomaS/cmake_build_action@v1.4
+#       - run: |
+#           g++ HelloWorld.cpp && ./a.out
+
+# #Fifth Job is for Go Programming Language..
+#   go:
+#     name: Go
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+#       - name: Install Go
+#         uses: actions/setup-go@v3
+#         with:
+#           go-version: '1.16.1'
+#       - run: |
+#          go run ./HelloWorld.go
+
+# #Sixth Job is for Java Programming Language..
+#   java:
+#     name: Java
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-java@v3
+#         with:
+#           distribution: "temurin" # See 'Supported distributions' for available options
+#           java-version: "17"
+#       - run: java HelloWorld.java
+
+# #Seventh Job is for Perl Programming Language..
+#   perl:
+#     name: Perl
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - run: |
+#           perl HelloWorld.pl
+
+#   cs:
+#     name: C#new
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-dotnet@v2
+#         with:
+#           dotnet-version: "5.0.x"
+#       - run: |
+#           dotnet run  
+#       ##--project /home/pulse16/Hello-World/HelloWorld.cs  
+
+#   # cs:
+#   #   name: C#
+#   #   runs-on: ubuntu-latest
+#   #   steps:
+#   #     - uses: actions/checkout@v2
+#   #     - uses: actions/setup-dotnet@v1
+#   #       with:
+#   #         dotnet-version: "5.0.x"
+#   #     - run: |
+#   #         dotnet run
+
+#   # CFLint:
+#   #     name: ColdFusion
+#   #     runs-on: ubuntu-latest
+
+#   #     steps:
+#   #       - name: checkout
+#   #         uses: actions/checkout@v3
+
+#   #       - name: Run a one-line script
+#   #         id: lint
+#   #         uses: foundeo/fixinator-github-action@master
+#   #         with:
+#   #           fixinator_api_key: ${{ secrets.FIXINATOR_API_KEY }}
+
+#   # publish:
+#   #     runs-on: ubuntu-latest
+#   #     container:
+#   #       image: ghcr.io/foundeo/cfml-ci-tools/cfml-ci-tools:latest
+#   #     steps:
+#   #       - uses: actions/checkout@v2
+
+#   #       - name: Set Version
+#   #         run: |
+#   #           # Strip git ref prefix from version
+#   #           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+#   #           # Strip "v" prefix from tag name
+#   #           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+#   #           # Use Docker `latest` tag convention
+#   #           [ "$VERSION" == "master" ] && VERSION=latest
+            
+#   #           echo $VERSION
+            
+#   #           box bump version=$VERSION
+            
+#   #           cat box.json
+            
+#   #           echo $VERSION > ./version.txt
+#   #         env:
+#   #           BOX_CONFIG_ENDPOINTS_FORGEBOX_APITOKEN: ${{ secrets.BOX_CONFIG_ENDPOINTS_FORGEBOX_APITOKEN }}
