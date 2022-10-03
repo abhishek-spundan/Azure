@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
       - run: |
-          node HelloWorld.js
+          node Helloworld.js
 
 
 # #First Job is for PHP Programming Language..
@@ -38,7 +38,7 @@ jobs:
       - run: |
           pwd
           ls
-          php HelloWorld.php
+          php Helloworld.php
 
 
 # #Third Job is for Python Programming Language..
